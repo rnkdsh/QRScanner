@@ -1,6 +1,7 @@
 package com.rnkdsh.qrscanner.barcode
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,10 +13,10 @@ import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.mlkit.vision.barcode.Barcode
 import com.google.mlkit.vision.barcode.BarcodeScanner
 import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
+import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
 import com.rnkdsh.qrscanner.databinding.ActivityQrScanBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,7 +54,7 @@ class QrScanActivity : AppCompatActivity() {
 
     private fun setupCamera() {
         cameraSelector = CameraSelector.Builder().requireLensFacing(lensFacing).build()
-        viewModel.processCameraProvider.observe(this, { provider: ProcessCameraProvider? ->
+        viewModel.processCameraProvider.observe(this) { provider: ProcessCameraProvider? ->
             cameraProvider = provider
             if (isCameraPermissionGranted()) {
                 bindCameraUseCases()
@@ -64,7 +65,7 @@ class QrScanActivity : AppCompatActivity() {
                     PERMISSION_CAMERA_REQUEST
                 )
             }
-        })
+        }
     }
 
     private fun bindCameraUseCases() {
@@ -124,11 +125,9 @@ class QrScanActivity : AppCompatActivity() {
         // Initialize our background executor
         val cameraExecutor = Executors.newSingleThreadExecutor()
 
-        analysisUseCase?.setAnalyzer(
-            cameraExecutor, { imageProxy ->
-                processImageProxy(barcodeScanner, imageProxy)
-            }
-        )
+        analysisUseCase?.setAnalyzer(cameraExecutor) { imageProxy ->
+            processImageProxy(barcodeScanner, imageProxy)
+        }
 
         try {
             cameraProvider!!.bindToLifecycle(
@@ -145,6 +144,7 @@ class QrScanActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("UnsafeOptInUsageError")
     private fun processImageProxy(
         barcodeScanner: BarcodeScanner,
         imageProxy: ImageProxy
