@@ -33,6 +33,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    namespace 'com.rnkdsh.qrscanner'
 }
 
 dependencies {
@@ -54,10 +55,10 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
 
     // CameraX
-    implementation 'androidx.camera:camera-camera2:1.1.0-beta01'
-    implementation 'androidx.camera:camera-lifecycle:1.1.0-beta01'
-    implementation 'androidx.camera:camera-view:1.1.0-beta01'
-    implementation 'androidx.camera:camera-extensions:1.1.0-beta01'
+    implementation 'androidx.camera:camera-camera2:1.1.0-beta03'
+    implementation 'androidx.camera:camera-lifecycle:1.1.0-beta03'
+    implementation 'androidx.camera:camera-view:1.1.0-beta03'
+    implementation 'androidx.camera:camera-extensions:1.1.0-beta03'
 
     // MLKit
     implementation 'com.google.mlkit:barcode-scanning:17.0.2'
