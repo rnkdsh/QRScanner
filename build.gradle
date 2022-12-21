@@ -19,7 +19,7 @@ buildscript {
         gsonVersion = '2.9.0'
         hiltVersion = '2.41'
         kotlinVersion = '1.6.20'
-        ktxVersion = '1.9.0-alpha02'
+        ktxVersion = '1.9.0'
         lifecycleVersion = '2.3.1'
         materialVersion = '1.5.0'
         timberVersion = '5.0.1'
