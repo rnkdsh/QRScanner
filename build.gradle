@@ -21,7 +21,7 @@ buildscript {
         kotlinVersion = '1.7.22'
         ktxVersion = '1.9.0'
         lifecycleVersion = '2.3.1'
-        materialVersion = '1.7.0'
+        materialVersion = '1.8.0'
         timberVersion = '5.0.1'
     }
     repositories {
