@@ -12,7 +12,7 @@ buildscript {
 
         // App dependencies
         androidGradlePluginVersion = '8.1.0-alpha02'
-        appCompatVersion = '1.6.0'
+        appCompatVersion = '1.6.1'
         constraintLayoutVersion = '2.1.4'
         coroutinesVersion = '1.6.4'
         fragmentVersion = '1.5.5'
