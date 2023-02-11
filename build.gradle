@@ -11,14 +11,14 @@ buildscript {
         targetSdkVersion = 33
 
         // App dependencies
-        androidGradlePluginVersion = '8.1.0-alpha02'
-        appCompatVersion = '1.6.0'
+        androidGradlePluginVersion = '8.1.0-alpha04'
+        appCompatVersion = '1.6.1'
         constraintLayoutVersion = '2.1.4'
         coroutinesVersion = '1.6.4'
         fragmentVersion = '1.5.5'
         gsonVersion = '2.10.1'
-        hiltVersion = '2.44.2'
-        kotlinVersion = '1.8.0'
+        hiltVersion = '2.45'
+        kotlinVersion = '1.8.10'
         ktxVersion = '1.9.0'
         lifecycleVersion = '2.3.1'
         materialVersion = '1.8.0'
