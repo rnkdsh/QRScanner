@@ -35,7 +35,7 @@ runner = "1.5.2"
 swiperefreshlayout = "1.2.0-alpha01"
 timber = "5.0.1"
 
-androidGradlePlugin = "8.1.0-alpha10"
+androidGradlePlugin = "8.1.0-alpha11"
 navigationSafeargsPlugin = "2.5.3"
 hiltPlugin = "2.45"
 googleServicesPlugin = "4.3.15"
