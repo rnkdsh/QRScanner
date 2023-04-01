@@ -10,7 +10,11 @@ class QrScanContract : ActivityResultContract<Any, QrData?>() {
         return Intent(context, QrScanActivity::class.java)
     }
 
-    override fun parseResult(resultCode: Int, intent: Intent?): QrData? {
-        return intent?.getParcelableExtra("data")
+    override fun parseResult(resultCode: Int, intent: Intent?): QrData {
+        return QrData(
+            isSuccess = intent?.getBooleanExtra("isSuccess", false) ?: false,
+            data = intent?.getStringExtra("data"),
+            message = intent?.getStringExtra("message")
+        )
     }
 }

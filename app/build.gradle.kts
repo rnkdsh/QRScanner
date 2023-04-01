@@ -1,11 +1,14 @@
 // TODO: Issue https://github.com/gradle/gradle/issues/22797
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin)
-    alias(libs.plugins.kotlin.parcelize)
-    alias(libs.plugins.kotlin.kapt)
-    alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+//    alias(libs.plugins.google.services)
+//    alias(libs.plugins.firebase.perf)
+//    alias(libs.plugins.firebase.crashlytics)
 }
 
 android {
@@ -35,26 +38,65 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.4"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
 }
 
 dependencies {
 
-    // UI
+    // Core
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.activity.ktx)
-    implementation(libs.androidx.fragment.ktx)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.material)
+    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.activity.compose)
 
-    // Kotlin
-    implementation(libs.kotlin.stdlib.jdk8)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
+    // Compose
+    implementation(platform(libs.compose.bom))
+    implementation(libs.ui)
+    implementation(libs.ui.graphics)
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.material3)
+
+    // Firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.perf)
+    implementation(libs.firebase.messaging)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.config)
 
     // Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    // AdMob
+    implementation(libs.ads)
+    implementation(libs.ads.facebook.audience.network)
+    implementation(libs.ads.facebook.mediation)
+    implementation(libs.ads.mediation.test.suite)
+
+    // Lottie
+    implementation(libs.lottie)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    // OkHttp
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    // Utils
+    implementation(libs.timber)
+    implementation(libs.gson)
 
     // CameraX
     implementation(libs.androidx.camera.camera2)
@@ -65,11 +107,12 @@ dependencies {
     // MLKit
     implementation(libs.barcode.scanning)
 
-    // Utils
-    implementation(libs.timber)
-    implementation(libs.gson)
-
+    // Test
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.runner)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.espresso.core)
+    androidTestImplementation(platform(libs.compose.bom))
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.ui.test.manifest)
 }

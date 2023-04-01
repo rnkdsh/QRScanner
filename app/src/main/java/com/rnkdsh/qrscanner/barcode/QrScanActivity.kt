@@ -18,7 +18,6 @@ import com.google.mlkit.vision.barcode.BarcodeScannerOptions
 import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.common.InputImage
-import com.rnkdsh.qrscanner.databinding.ActivityQrScanBinding
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 import java.util.concurrent.Executors
@@ -30,9 +29,6 @@ import kotlin.math.min
 class QrScanActivity : AppCompatActivity() {
 
     private val viewModel: QrScanViewModel by viewModels()
-    private val binding by lazy {
-        ActivityQrScanBinding.inflate(layoutInflater)
-    }
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraSelector: CameraSelector? = null
     private var lensFacing = CameraSelector.LENS_FACING_BACK
@@ -42,13 +38,15 @@ class QrScanActivity : AppCompatActivity() {
     private val screenAspectRatio: Int
         get() {
             // Get screen metrics used to setup camera for full screen resolution
-            val metrics = DisplayMetrics().also { binding.previewView.display?.getRealMetrics(it) }
+            val metrics = DisplayMetrics().also {
+//                binding.previewView.display?.getRealMetrics(it)
+            }
             return aspectRatio(metrics.widthPixels, metrics.heightPixels)
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+//        setContentView(binding.root)
         setupCamera()
     }
 
@@ -83,9 +81,9 @@ class QrScanActivity : AppCompatActivity() {
 
         previewUseCase = Preview.Builder()
             .setTargetAspectRatio(screenAspectRatio)
-            .setTargetRotation(binding.previewView.display.rotation)
+//            .setTargetRotation(binding.previewView.display.rotation)
             .build()
-        previewUseCase!!.setSurfaceProvider(binding.previewView.surfaceProvider)
+//        previewUseCase!!.setSurfaceProvider(binding.previewView.surfaceProvider)
 
         try {
             cameraProvider!!.bindToLifecycle(
@@ -119,7 +117,7 @@ class QrScanActivity : AppCompatActivity() {
 
         analysisUseCase = ImageAnalysis.Builder()
             .setTargetAspectRatio(screenAspectRatio)
-            .setTargetRotation(binding.previewView.display.rotation)
+//            .setTargetRotation(binding.previewView.display.rotation)
             .build()
 
         // Initialize our background executor
@@ -214,14 +212,18 @@ class QrScanActivity : AppCompatActivity() {
 
     private fun setSuccessResult(code: String?) {
         val intent = Intent()
-        intent.putExtra("data", QrData(true, code, null))
+        intent.putExtra("isSuccess", true)
+        intent.putExtra("data", code)
+        intent.putExtra("message", "Success")
         setResult(Activity.RESULT_OK, intent)
         finish()
     }
 
     private fun setFailureResult(message: String?) {
         val intent = Intent()
-        intent.putExtra("data", QrData(false, null, message))
+        intent.putExtra("isSuccess", false)
+//        intent.putExtra("data", null)
+        intent.putExtra("message", message)
         setResult(Activity.RESULT_CANCELED, intent)
         finish()
     }
