@@ -8,7 +8,7 @@ google-services = "4.3.15"
 firebase-perf = "1.4.2"
 firebase-crashlytics = "2.9.4"
 
-core-ktx = "1.9.0"
+core-ktx = "1.10.0"
 lifecycle-runtime-ktx = "2.6.1"
 activity-compose = "1.7.0"
 compose-bom = "2023.03.00"
