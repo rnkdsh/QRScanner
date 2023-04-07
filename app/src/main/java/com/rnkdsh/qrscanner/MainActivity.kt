@@ -2,12 +2,13 @@ package com.rnkdsh.qrscanner
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import com.rnkdsh.qrscanner.barcode.QrScanContract
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
     private val qrDataResult = registerForActivityResult(QrScanContract()) {
         it?.let {

@@ -3,24 +3,24 @@ com-android-application = "8.1.0-alpha11"
 org-jetbrains-kotlin-android = "1.8.10"
 ksp = "1.8.10-1.0.9"
 hilt = "2.45"
-hiltExt = "1.0.0"
 google-services = "4.3.15"
 firebase-perf = "1.4.2"
 firebase-crashlytics = "2.9.4"
 
-core-ktx = "1.9.0"
-lifecycle-runtime-ktx = "2.6.1"
+core-ktx = "1.10.0"
 activity-compose = "1.7.0"
-compose-bom = "2023.03.00"
+lifecycle-runtime-ktx = "2.6.1"
+androidx-hilt = "1.0.0"
+compose-bom = "2023.04.00"
 firebase-bom = "31.4.0"
-google-android-play-core = "2.0.1"
 
 play-services-ads = "22.0.0"
 ads-facebook-audience-network = "6.13.7"
 ads-facebook-mediation = "6.13.7.0"
 mediation-test-suite = "3.0.0"
+play-core = "2.0.1"
+
 gson = "2.10.1"
-lifecycle = "2.6.1"
 lottie = "6.0.0"
 retrofit = "2.9.0"
 okhttp = "5.0.0-alpha.11"
@@ -57,28 +57,28 @@ firebase-config = { group = "com.google.firebase", name = "firebase-config-ktx" 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
+androidx-hilt-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "androidx-hilt" }
 
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
+play-core = { group = "com.google.android.play", name = "core-ktx", version.ref = "play-core" }
 ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "play-services-ads" }
 ads-facebook-audience-network = { group = "com.facebook.android", name = "audience-network-sdk", version.ref = "ads-facebook-audience-network" }
 ads-facebook-mediation = { group = "com.google.ads.mediation", name = "facebook", version.ref = "ads-facebook-mediation" }
 ads-mediation-test-suite = { group = "com.google.android.ads", name = "mediation-test-suite", version.ref = "mediation-test-suite" }
 
-google-android-play-core = { group = "com.google.android.play", name = "core-ktx", version.ref = "google-android-play-core" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 
-androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camera" }
-androidx-camera-extensions = { module = "androidx.camera:camera-extensions", version.ref = "camera" }
-androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camera" }
-androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camera" }
-barcode-scanning = { module = "com.google.mlkit:barcode-scanning", version.ref = "barcode-scanning" }
+androidx-camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camera" }
+androidx-camera-extensions = { group = "androidx.camera", name = "camera-extensions", version.ref = "camera" }
+androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camera" }
+androidx-camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "camera" }
+barcode-scanning = { group = "com.google.mlkit", name = "barcode-scanning", version.ref = "barcode-scanning" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }

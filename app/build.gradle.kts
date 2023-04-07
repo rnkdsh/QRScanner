@@ -21,9 +21,9 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildFeatures {
-        dataBinding = true
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
     buildTypes {
         release {
@@ -78,10 +78,10 @@ dependencies {
     kapt(libs.hilt.compiler)
 
     // AdMob
-    implementation(libs.ads)
-    implementation(libs.ads.facebook.audience.network)
-    implementation(libs.ads.facebook.mediation)
-    implementation(libs.ads.mediation.test.suite)
+//    implementation(libs.ads)
+//    implementation(libs.ads.facebook.audience.network)
+//    implementation(libs.ads.facebook.mediation)
+//    implementation(libs.ads.mediation.test.suite)
 
     // Lottie
     implementation(libs.lottie)
