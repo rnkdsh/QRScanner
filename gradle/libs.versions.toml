@@ -5,7 +5,7 @@ ksp = "1.8.10-1.0.9"
 hilt = "2.45"
 google-services = "4.3.15"
 firebase-perf = "1.4.2"
-firebase-crashlytics = "2.9.4"
+firebase-crashlytics = "2.9.5"
 
 core-ktx = "1.10.0"
 activity-compose = "1.7.0"
