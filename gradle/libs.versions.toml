@@ -1,6 +1,6 @@
 [versions]
 com-android-application = "8.1.0-alpha11"
-org-jetbrains-kotlin-android = "1.8.10"
+org-jetbrains-kotlin-android = "1.8.20"
 ksp = "1.8.10-1.0.9"
 hilt = "2.45"
 google-services = "4.3.15"
