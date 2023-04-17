@@ -16,7 +16,7 @@ firebase-bom = "31.5.0"
 
 play-services-ads = "22.0.0"
 ads-facebook-audience-network = "6.13.7"
-ads-facebook-mediation = "6.13.7.0"
+ads-facebook-mediation = "6.13.7.1"
 mediation-test-suite = "3.0.0"
 play-core = "2.0.1"
 
