@@ -8,7 +8,7 @@ firebase-perf = "1.4.2"
 firebase-crashlytics = "2.9.5"
 
 core-ktx = "1.10.0"
-activity-compose = "1.7.0"
+activity-compose = "1.7.1"
 lifecycle-runtime-ktx = "2.6.1"
 androidx-hilt = "1.0.0"
 compose-bom = "2023.04.00"
