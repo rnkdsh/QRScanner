@@ -19,7 +19,7 @@ material = "1.9.0-rc01"
 
 play-services-ads = "22.0.0"
 ads-facebook-audience-network = "6.14.0"
-ads-facebook-mediation = "6.13.7.1"
+ads-facebook-mediation = "6.14.0.0"
 mediation-test-suite = "3.0.0"
 play-core = "2.0.1"
 
