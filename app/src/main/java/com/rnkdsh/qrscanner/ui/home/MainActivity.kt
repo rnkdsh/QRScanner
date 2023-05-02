@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
             if (it.isSuccess) {
 //                binding.qrCodeResult.text = it.data
             } else {
-                Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                Toast.makeText(this@MainActivity, it.message.orEmpty(), Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -44,10 +44,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
-        /*setContentView(binding.root)
-        binding.scanQRCode.setOnClickListener {
-            qrDataResult.launch(Any())
-        }*/
         val options = GmsBarcodeScannerOptions.Builder()
             .setBarcodeFormats(
                 Barcode.FORMAT_QR_CODE,
