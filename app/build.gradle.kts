@@ -58,10 +58,19 @@ android {
 
 dependencies {
     // Core
+    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.tracing.ktx)
+    implementation(libs.androidx.metrics)
+    implementation(libs.androidx.compose.material.iconsExtended)
 
     // Compose
     implementation(platform(libs.compose.bom))
@@ -115,6 +124,9 @@ dependencies {
     // Play Services Code Scanner
     implementation(libs.play.services.code.scanner)
 
+    // Accompanist
+    implementation(libs.accompanist.systemuicontroller)
+
     // Test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
@@ -123,4 +135,5 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    androidTestImplementation(libs.androidx.navigation.testing)
 }
