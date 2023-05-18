@@ -22,7 +22,7 @@ compose-bom = "2023.05.00"
 compose-compiler = "1.4.7"
 firebase-bom = "32.0.0"
 
-play-services-ads = "22.0.0"
+play-services-ads = "22.1.0"
 ads-facebook-audience-network = "6.14.0"
 ads-facebook-mediation = "6.14.0.0"
 mediation-test-suite = "3.0.0"
