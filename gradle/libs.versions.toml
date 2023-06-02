@@ -2,7 +2,7 @@
 com-android-application = "8.2.0-alpha06"
 org-jetbrains-kotlin-android = "1.8.21"
 ksp = "1.8.21-1.0.11"
-hilt = "2.46"
+hilt = "2.46.1"
 google-services = "4.3.15"
 firebase-perf = "1.4.2"
 firebase-crashlytics = "2.9.5"
