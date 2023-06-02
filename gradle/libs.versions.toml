@@ -1,5 +1,5 @@
 [versions]
-com-android-application = "8.2.0-alpha02"
+com-android-application = "8.2.0-alpha06"
 org-jetbrains-kotlin-android = "1.8.21"
 ksp = "1.8.21-1.0.11"
 hilt = "2.46"
