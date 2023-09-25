@@ -1,7 +1,7 @@
 [versions]
 com-android-application = "8.2.0-alpha16"
 org-jetbrains-kotlin-android = "1.9.10"
-ksp = "1.9.0-1.0.13"
+ksp = "1.9.10-1.0.13"
 hilt = "2.47"
 google-services = "4.3.15"
 firebase-perf = "1.4.2"
