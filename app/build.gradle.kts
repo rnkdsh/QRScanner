@@ -44,8 +44,7 @@ android {
         buildConfig = true
     }
     composeOptions {
-        val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-        kotlinCompilerExtensionVersion = libs.findVersion("compose-compiler").get().toString()
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
